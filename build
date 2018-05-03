@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#chmod +x build
+#ls -tl | head
+
+echo "building..."
+nasm -f elf32 -g -F dwarf Lab0x05-main.asm
+nasm -f elf32 -g -F dwarf Lab0x05-library.asm
+echo "linking..."
+ld -m elf_i386 Lab0x05-main.o Lab0x05-library.o -o go
+./go
+
+#kdbg go &
+#other commands can go here

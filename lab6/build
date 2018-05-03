@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo "building..."
+nasm -f elf32 -g -F dwarf libLab0x06.asm
+#echo "linking..."
+#ld -m elf_i386 -lc libLab0x06.o -o go -I /lib/ld-linux.so.2
+echo "c compiler..."
+gcc -m32 -g lab0x06-main.c libLab0x06.o -o go
